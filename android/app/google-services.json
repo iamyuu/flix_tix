@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580275897480",
+    "project_id": "flix-tix",
+    "storage_bucket": "flix-tix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580275897480:android:0826e75969444499b70b3d",
+        "android_client_info": {
+          "package_name": "dev.iamyuu.flix_tix"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9CG3hMRUdSiNFdefLCmO7ExucC47B6tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
