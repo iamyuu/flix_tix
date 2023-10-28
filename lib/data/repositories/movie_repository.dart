@@ -15,7 +15,7 @@ abstract interface class MovieRepository {
     required int id,
   });
 
-  Future<Result<Actor>> getActors({
+  Future<Result<List<Actor>>> getActors({
     required int id,
   });
 }
