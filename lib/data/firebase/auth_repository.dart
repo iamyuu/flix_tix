@@ -13,7 +13,7 @@ class FirebaseAuthRepository implements AuthRepository {
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   @override
-  String? getUserId() => _firebaseAuth.currentUser?.uid;
+  String? getAuthUserId() => _firebaseAuth.currentUser?.uid;
 
   @override
   Future<Result<String>> logInWithCredentials({
@@ -33,7 +33,15 @@ class FirebaseAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<void> logOut() => _firebaseAuth.signOut();
+  Future<Result<void>> logOut() async {
+    await _firebaseAuth.signOut();
+
+    if (_firebaseAuth.currentUser == null) {
+      return const Result.success(null);
+    } else {
+      return const Result.error('Unable to log out');
+    }
+  }
 
   @override
   Future<Result<String>> registerWithCredentials({

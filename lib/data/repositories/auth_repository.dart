@@ -11,7 +11,7 @@ abstract interface class AuthRepository {
     required String password,
   });
 
-  Future<void> logOut();
+  Future<Result<void>> logOut();
 
-  String? getUserId();
+  String? getAuthUserId();
 }
