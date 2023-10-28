@@ -1,7 +1,3 @@
 # flix_tix
 
-Cinema ticket order app
-
-## Scripts
-
-- build runner: `dart run build_runner watch -d`
+A movie ticketing app that allows users to search for movies, view movie details, and purchase tickets.
