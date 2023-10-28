@@ -17,11 +17,7 @@ abstract interface class UserRepository {
   });
 
   Future<Result<User>> updateUser({
-    required String uid,
-    required String name,
-    required String email,
-    String? photoUrl,
-    int? balance,
+    required User user,
   });
 
   Future<Result<int>> getUserBalance({
@@ -34,7 +30,7 @@ abstract interface class UserRepository {
   });
 
   Future<Result<User>> uploadProfilePicture({
-    required String uid,
+    required User user,
     required File pictureFile,
   });
 }

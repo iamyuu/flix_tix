@@ -13,7 +13,5 @@ abstract interface class AuthRepository {
 
   Future<void> logOut();
 
-  Future<bool> isSignedIn();
-
-  Future<String> getUser();
+  String? getUserId();
 }

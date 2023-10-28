@@ -13,16 +13,7 @@ class FirebaseAuthRepository implements AuthRepository {
   }) : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   @override
-  Future<String> getUser() {
-    // TODO: implement getUser
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<bool> isSignedIn() {
-    // TODO: implement isSignedIn
-    throw UnimplementedError();
-  }
+  String? getUserId() => _firebaseAuth.currentUser?.uid;
 
   @override
   Future<Result<String>> logInWithCredentials({
@@ -42,17 +33,22 @@ class FirebaseAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<void> logOut() {
-    // TODO: implement logOut
-    throw UnimplementedError();
-  }
+  Future<void> logOut() => _firebaseAuth.signOut();
 
   @override
   Future<Result<String>> registerWithCredentials({
     required String email,
     required String password,
-  }) {
-    // TODO: implement registerWithCredentials
-    throw UnimplementedError();
+  }) async {
+    try {
+      var userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+
+      return Result.success(userCredential.user!.uid);
+    } on firebase_auth.FirebaseAuthException catch (e) {
+      return Result.error('Error: ${e.message}');
+    }
   }
 }
