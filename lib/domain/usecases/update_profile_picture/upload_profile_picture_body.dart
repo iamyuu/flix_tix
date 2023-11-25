@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:flix_tix/domain/entities/user.dart';
 
-class UpdateProfilePictureBody {
+class UploadProfilePictureBody {
   final User user;
   final File pictureFile;
 
-  UpdateProfilePictureBody({
+  UploadProfilePictureBody({
     required this.user,
     required this.pictureFile,
   });
