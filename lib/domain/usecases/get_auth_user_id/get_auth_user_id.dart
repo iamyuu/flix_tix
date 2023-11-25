@@ -4,11 +4,11 @@ import 'package:flix_tix/domain/entities/result.dart';
 import 'package:flix_tix/domain/entities/user.dart';
 import 'package:flix_tix/domain/usecases/usecase.dart';
 
-class Register implements UseCase<Result<User>, void> {
+class GetAuthUserId implements UseCase<Result<User>, void> {
   final AuthRepository authRepository;
   final UserRepository userRepository;
 
-  Register({
+  GetAuthUserId({
     required this.authRepository,
     required this.userRepository,
   });
