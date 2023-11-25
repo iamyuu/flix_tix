@@ -5,10 +5,10 @@ import 'package:flix_tix/domain/usecases/usecase.dart';
 
 part 'get_actors_params.dart';
 
-class GetMovieDetail implements UseCase<Result<List<Actor>>, GetActorsParams> {
+class GetActors implements UseCase<Result<List<Actor>>, GetActorsParams> {
   final MovieRepository movieRepository;
 
-  GetMovieDetail({
+  GetActors({
     required this.movieRepository,
   });
 
