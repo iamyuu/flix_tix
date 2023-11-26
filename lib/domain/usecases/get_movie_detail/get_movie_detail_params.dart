@@ -1,9 +1,9 @@
 part of 'get_movie_detail.dart';
 
 class GetMovieDetailParams {
-  final int movieId;
+  final Movie movie;
 
   GetMovieDetailParams({
-    required this.movieId,
+    required this.movie,
   });
 }
